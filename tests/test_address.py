@@ -11,7 +11,7 @@ class AddressTestCase(unittest.TestCase):
             'phones': [],
             'address': ['ORG', 'FAC', 'GPE']
         }
-        censored_text = testObj.censor_text(sample_text, entity_types)
+        censored_text = testObj.censor_info(sample_text, entity_types)
 
         
         expected_censored_parts = [

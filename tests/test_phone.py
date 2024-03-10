@@ -5,7 +5,7 @@ class PhoneTestCase(unittest.TestCase):
     def test_censor_phone_numbers(self):
         sample_text = "Reach me at 123-456-7890."
         entity_types = {'names': [], 'dates': [], 'phones': ['CARDINAL'], 'address': []}
-        censored_text = testObj.censor_text(sample_text, entity_types)
+        censored_text = testObj.censor_info(sample_text, entity_types)
 
         expected_censored_portion = "█" * 3
         expected_uncensored_portion = "456-7890"

@@ -12,7 +12,7 @@ class NameTestCase(unittest.TestCase):
             'phones': [],
             'address': []
         }
-        censored = testObj.censor_text(text_with_names, entity_types)
+        censored = testObj.censor_info(text_with_names, entity_types)
         self.assertNotIn("John Doe", censored)
         self.assertIn("█" * len("John Doe"), censored)
 
