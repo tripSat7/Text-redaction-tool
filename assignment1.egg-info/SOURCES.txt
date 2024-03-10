@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+assignment1/__init__.py
+assignment1/main.py
+assignment1.egg-info/PKG-INFO
+assignment1.egg-info/SOURCES.txt
+assignment1.egg-info/dependency_links.txt
+assignment1.egg-info/requires.txt
+assignment1.egg-info/top_level.txt
+tests/test_address.py
+tests/test_date.py
+tests/test_fileExists.py
+tests/test_name.py
+tests/test_phone.py

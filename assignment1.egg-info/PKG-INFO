@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: assignment1
+Version: 1.0
+Author: Saatvik Tripathy
+Author-email: satvik.tripathy@ufl.edu
+Requires-Dist: requests
