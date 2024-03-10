@@ -30,7 +30,14 @@ censorAddress=0
 censorPhone=0
 censorDate=0
 
-nlp = spacy.load("en_core_web_md")
+try:
+    nlp = spacy.load("en_core_web_md")
+except IOError:
+    print("SpaCy model not found. Downloading...")
+    spacy.cli.download("en_core_web_md")
+    nlp = spacy.load("en_core_web_md")
+
+# nlp = spacy.load("en_core_web_md")
 # nlp = load_spacy("en_core_web_sm", exclude=["parser", "tagger"])  
 # print(nlp.get_pipe("ner").labels)
 
