@@ -9,12 +9,7 @@ import sys
 from collections import defaultdict
 import warnings
 warnings.filterwarnings("ignore")
-# from spacy_download import load_spacy
 
-# Will download the model if it isn't installed yet
-# nlp = load_spacy("en_core_web_sm")
-
-# Define censor character
 CENSOR_CHAR = '█'
 
 # Define entity types for censoring
@@ -36,11 +31,6 @@ except IOError:
     print("SpaCy model not found. Downloading...")
     spacy.cli.download("en_core_web_md")
     nlp = spacy.load("en_core_web_md")
-
-# nlp = spacy.load("en_core_web_md")
-# nlp = load_spacy("en_core_web_sm", exclude=["parser", "tagger"])  
-# print(nlp.get_pipe("ner").labels)
-
 
 # Add custom pattern to match dates in "mm/dd/yyyy" format
 matcher = Matcher(nlp.vocab)
@@ -82,10 +72,8 @@ def censor_text(text, entity_types):
     phone_pattern = re.compile(r'\+\d{1,3}(?:[-\s()]?\d{1,3}[-\s()]?){3,5}\d{1,5}')
 
     censored_text = text
-    # print(doc.ents)
     
     for ent in doc.ents:
-        #print(ent.text+ " "+ ent.label_)
         if ent.label_ in entity_types['names']:
             start = ent.start_char
             end = ent.end_char
