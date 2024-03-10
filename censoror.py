@@ -2,32 +2,17 @@ import argparse
 import glob
 import os
 import re
+import spacy
 from spacy.matcher import Matcher
 from spacy.tokens import Doc, Span
+import sys
 from collections import defaultdict
 import warnings
 warnings.filterwarnings("ignore")
-# import spacy_download
 # from spacy_download import load_spacy
-import spacy
-import sys
 
-def load_spacy(model_name="en_core_web_sm"):
-    try:
-        return spacy.load(model_name)
-    except OSError:
-        print(f"{model_name} not found, downloading...", file=sys.stderr)
-        spacy.cli.download(model_name)
-        return spacy.load(model_name)
-
-# Example usage within your script or test setup
-nlp = spacy.load("en_core_web_sm")  # Use "en_core_web_md" or other models as needed
-
-# # Proceed with using the `nlp` object as before
-
-
-# # Will download the model if it isn't installed yet
-# nlp = load_spacy("en_core_web_sm", exclude=["parser", "tagger"])
+# Will download the model if it isn't installed yet
+# nlp = load_spacy("en_core_web_sm")
 
 # Define censor character
 CENSOR_CHAR = '█'
@@ -45,7 +30,7 @@ censorAddress=0
 censorPhone=0
 censorDate=0
 
-# nlp = spacy.load("en_core_web_md")
+nlp = spacy.load("en_core_web_md")
 # nlp = load_spacy("en_core_web_sm", exclude=["parser", "tagger"])  
 # print(nlp.get_pipe("ner").labels)
 
@@ -161,7 +146,6 @@ def main():
                 # Generate statistics
                 statistics = generate_statistics(censored_texts)
 
-                
                 # Write statistics to file or stdout/stderr
                 if args.stats:
                     if args.stats == 'stderr':
