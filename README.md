@@ -1,7 +1,4 @@
-# cis6930sp24-assignment1
-Name : Saatvik Tripathy\
-e-mail id : saatvik.tripathy@ufl.edu\
-UFID : 12326074
+# Text Redaction tool
 
 # Assignment Description
 Assignment 1 is designed to delve into the realms of natural language processing (NLP) and data privacy, focusing on the automated redaction of sensitive information from text documents. It employs advanced NLP techniques for the identification and categorization of personal data, including names, dates, phone numbers, and addresses, ensuring their effective censorship in compliance with privacy regulations. Alongside, it offers a statistical analysis feature that generates insightful metrics about the censored entities, providing a comprehensive overview of data sensitivity and redaction efficiency. This assignment not only enhances understanding and skills in text processing and data privacy but also addresses real-world needs for data protection in various sectors such as legal documentation, customer service, and academic research.
